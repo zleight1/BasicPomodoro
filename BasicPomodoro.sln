@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPomodoro", "BasicPomodoro\BasicPomodoro.csproj", "{09C9262E-D3F8-4BC4-8479-E2AA729AA852}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72A46D30-E911-4F2E-B9B2-64B68B59F85E}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinPomodoro", "WinPomodoro\WinPomodoro.csproj", "{27690D24-E75D-4CCB-BF63-AB35E90A41EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{09C9262E-D3F8-4BC4-8479-E2AA729AA852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09C9262E-D3F8-4BC4-8479-E2AA729AA852}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09C9262E-D3F8-4BC4-8479-E2AA729AA852}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09C9262E-D3F8-4BC4-8479-E2AA729AA852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27690D24-E75D-4CCB-BF63-AB35E90A41EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27690D24-E75D-4CCB-BF63-AB35E90A41EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27690D24-E75D-4CCB-BF63-AB35E90A41EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27690D24-E75D-4CCB-BF63-AB35E90A41EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
