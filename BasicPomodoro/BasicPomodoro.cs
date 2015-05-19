@@ -22,7 +22,7 @@ namespace BasicPomodoro
         {
             _view = view;
 
-            Brush brush = new SolidColorBrush(Colors.BlueViolet);
+            Brush brush = new SolidColorBrush(Colors.IndianRed);
             brush.Freeze();
             Brush penBrush = new SolidColorBrush(Colors.Red);
             penBrush.Freeze();
@@ -30,17 +30,19 @@ namespace BasicPomodoro
             pen.Freeze();
 
             //draw a square with the created brush and pen
-            System.Windows.Rect r = new System.Windows.Rect(0, 0, 30, 30);
+            System.Windows.Rect r = new System.Windows.Rect(0, 0, 200, 50);
+           
             Geometry g = new RectangleGeometry(r);
             GeometryDrawing drawing = new GeometryDrawing(brush, pen, g);
             drawing.Freeze();
-
+        
             DrawingImage drawingImage = new DrawingImage(drawing);
+            
             drawingImage.Freeze();
 
             _image = new Image();
             _image.Source = drawingImage;
-
+            
             //Grab a reference to the adornment layer that this adornment should be added to
             _adornmentLayer = view.GetAdornmentLayer("BasicPomodoro");
 
@@ -54,8 +56,8 @@ namespace BasicPomodoro
             _adornmentLayer.RemoveAllAdornments();
 
             //Place the image in the top right hand corner of the Viewport
-            Canvas.SetLeft(_image, _view.ViewportRight - 60);
-            Canvas.SetTop(_image, _view.ViewportTop + 30);
+            Canvas.SetLeft(_image, _view.ViewportRight - 220);
+            Canvas.SetTop(_image, _view.ViewportTop + 20);
 
             //add the image to the adornment layer and make it relative to the viewport
             _adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, _image, null);

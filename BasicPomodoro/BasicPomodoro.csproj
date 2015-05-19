@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BasicPomodoro.cs" />
     <Compile Include="BasicPomodoroFactory.cs" />
+    <Compile Include="Pomodoro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
