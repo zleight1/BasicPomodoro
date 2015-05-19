@@ -18,15 +18,19 @@ namespace BasicPomodoro
     {
         private Timer _timer;
         private pomodoroState _state;
-        private int _workTime;
+        private int _workTime; //minutes
         //private int _buzzTime;
-        private int _shortBreakTime;
-        private int _longBreakTime;
+        private int _shortBreakTime; //minutes
+        private int _longBreakTime; //minutes
 
         //The default pomodoro settings
         public Pomodoro()
         {
-
+            _timer = new Timer();
+            _workTime = 25;
+            _shortBreakTime = 5;
+            _longBreakTime = 15;
+            _timer.Interval = 60000 * _workTime;
         }
 
         //Custom pomodoro settings
