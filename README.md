@@ -1,4 +1,4 @@
 # BasicPomodoro
-A bare-bones "Pomodoro Timer" extension for Visual Studio
+A bare-bones "Pomodoro Timer" Desktop Widget
 
 More features to come.
