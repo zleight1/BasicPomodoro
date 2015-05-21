@@ -13,16 +13,20 @@ namespace BasicPomodoro
         work = 1,
         buzzing = 2,
         shortBreak = 3,
-        longBreak = 4
+        longBreak = 4,
+        finished = 5
     }
+
     class Pomodoro : IDisposable
     {
         private Timer _timer;
         private pomodoroState _state;
+        private pomodoroState _nextState;
         private int _workTime; //minutes
         //private int _buzzTime;
         private int _shortBreakTime; //minutes
         private int _longBreakTime; //minutes
+        private int _shortBreakCount;
 
         //The default pomodoro settings
         public Pomodoro()
@@ -30,7 +34,7 @@ namespace BasicPomodoro
             _workTime = 25;
             _shortBreakTime = 5;
             _longBreakTime = 15;
-            initializeTimer();
+            resetTimer();
         }
 
         //Custom pomodoro settings
@@ -75,7 +79,7 @@ namespace BasicPomodoro
             {
                 throw new ArgumentException("Long break time needs to be greater than short break time.");
             }
-            initializeTimer();
+            resetTimer();
         }
 
         public readonly Timer Timer() {
@@ -83,7 +87,7 @@ namespace BasicPomodoro
         }
 
         //Initialize the timer
-        private void initializeTimer()
+        private void resetTimer()
         {
 
             //Log for logging's sake!
@@ -97,6 +101,10 @@ namespace BasicPomodoro
             //use work time to start since this is state 0
             _timer.Interval = 60000 * _workTime;
             _timer.Elapsed += _timer_Elapsed;
+
+            _state = pomodoroState.idle;
+            _nextState = pomodoroState.work;
+            _shortBreakCount = 0;
         }
 
         //start the timer
@@ -109,8 +117,8 @@ namespace BasicPomodoro
         //stop the timer
         public void stopTimer()
         {
+            _timer.Stop();
 
-            throw new NotImplementedException();
         }
 
         //respond to event
