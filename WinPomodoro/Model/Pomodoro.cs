@@ -7,9 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace BasicPomodoro
+
+namespace WinPomodoro.Model
 {
-    enum POMODORO_STATE {
+    enum POMODORO_STATE
+    {
         IDLE = 0,
         WORK = 1,
         BUZZING = 2,
@@ -83,7 +85,8 @@ namespace BasicPomodoro
             resetTimer();
         }
 
-        public TimerPlus Timer() {
+        public TimerPlus Timer()
+        {
             return _timer;
         }
 
@@ -124,7 +127,7 @@ namespace BasicPomodoro
         //respond to event
         private void _timer_Elapsed(object sender, ElapsedEventArgs e)
         {
- 	        throw new NotImplementedException();
+            throw new NotImplementedException();
         }
         //change state?
 

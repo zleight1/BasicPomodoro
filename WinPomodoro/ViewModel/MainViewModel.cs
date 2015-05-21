@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using BasicPomodoro.Model;
+using WinPomodoro.Model;
 
-namespace BasicPomodoro.ViewModel
+namespace WinPomodoro.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.
