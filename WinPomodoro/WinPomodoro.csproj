@@ -79,9 +79,6 @@
     <Compile Include="Model\PomodoroModel.cs" />
     <Compile Include="Model\PomodoroModelEventArgs.cs" />
     <Compile Include="Model\PomodoroState.cs" />
-    <Compile Include="Model\TimerPlus.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

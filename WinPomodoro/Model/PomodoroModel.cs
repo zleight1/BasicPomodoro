@@ -6,27 +6,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Windows.Threading;
 
 
 namespace WinPomodoro.Model
 {
     class PomodoroModel : IDisposable
     {
-        private TimerPlus _timer;
+        #region Fields
+        /// <summary>
+        /// The underlying timer
+        /// </summary>
+        readonly DispatcherTimer timer = new DispatcherTimer();
+
+        /// <summary>
+        /// The current Pomodoro State
+        /// </summary>
         private PomodoroState _state;
+
+        /// <summary>
+        /// The next Pomodoro State
+        /// </summary>
         private PomodoroState _nextState;
-        private int _workTime; //minutes
-        //private int _buzzTime;
-        private int _shortBreakTime; //minutes
-        private int _longBreakTime; //minutes
+
+        private TimeSpan _workTime; 
+        private TimeSpan _shortBreakTime;
+        private TimeSpan _longBreakTime;
+
         private int _shortBreakCount;
+        
+        #endregion
 
         //The default pomodoro settings
         public PomodoroModel()
         {
-            _workTime = 25;
-            _shortBreakTime = 5;
-            _longBreakTime = 15;
+            _workTime = new TimeSpan(0,25,0);
+            _shortBreakTime = new TimeSpan(0,5,0);
+            _longBreakTime = new TimeSpan(0,15,0);
             resetTimer();
         }
 
@@ -37,7 +53,7 @@ namespace WinPomodoro.Model
             //are all arguments > 0
             if (workTime > 0)
             {
-                _workTime = workTime;
+                _workTime = new TimeSpan(0,workTime,0);
             }
             else
             {
@@ -46,7 +62,7 @@ namespace WinPomodoro.Model
 
             if (shortBreakTime > 0)
             {
-                _shortBreakTime = shortBreakTime;
+                _shortBreakTime = new TimeSpan(0,shortBreakTime,0);
             }
             else
             {
@@ -55,7 +71,7 @@ namespace WinPomodoro.Model
 
             if (longBreakTime > 0)
             {
-                _longBreakTime = longBreakTime;
+                _longBreakTime = new TimeSpan(0,longBreakTime,0);
             }
             else
             {
@@ -74,12 +90,7 @@ namespace WinPomodoro.Model
             }
             resetTimer();
         }
-
-        public TimerPlus Timer()
-        {
-            return _timer;
-        }
-
+        
         //Initialize the timer
         private void resetTimer()
         {
