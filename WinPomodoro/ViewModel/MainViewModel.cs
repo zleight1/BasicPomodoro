@@ -4,13 +4,12 @@ using WinPomodoro.Model;
 namespace WinPomodoro.ViewModel
 {
     /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
+    /// Main View
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+
+        #region Fields
         private readonly IDataService _dataService;
 
         /// <summary>
@@ -19,6 +18,7 @@ namespace WinPomodoro.ViewModel
         public const string WelcomeTitlePropertyName = "WelcomeTitle";
 
         private string _welcomeTitle = string.Empty;
+        #endregion
 
         /// <summary>
         /// Gets the WelcomeTitle property.

@@ -10,21 +10,11 @@ using System.Timers;
 
 namespace WinPomodoro.Model
 {
-    enum POMODORO_STATE
-    {
-        IDLE = 0,
-        WORK = 1,
-        BUZZING = 2,
-        SHORT_BREAK = 3,
-        LONG_BREAK = 4,
-        COMPLETED = 5
-    }
-
     class PomodoroModel : IDisposable
     {
         private TimerPlus _timer;
-        private POMODORO_STATE _state;
-        private POMODORO_STATE _nextState;
+        private PomodoroState _state;
+        private PomodoroState _nextState;
         private int _workTime; //minutes
         //private int _buzzTime;
         private int _shortBreakTime; //minutes
@@ -106,8 +96,8 @@ namespace WinPomodoro.Model
             _timer.Interval = 60000 * _workTime;
             _timer.Elapsed += _timer_Elapsed;
 
-            _state = POMODORO_STATE.IDLE;
-            _nextState = POMODORO_STATE.WORK;
+            _state = PomodoroState.IDLE;
+            _nextState = PomodoroState.WORK;
             _shortBreakCount = 0;
         }
 
