@@ -1,4 +1,4 @@
-﻿using BasicPomodoro.Model;
+﻿using WinPomodoro.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
