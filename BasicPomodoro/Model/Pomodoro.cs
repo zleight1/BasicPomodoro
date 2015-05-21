@@ -27,11 +27,10 @@ namespace BasicPomodoro
         //The default pomodoro settings
         public Pomodoro()
         {
-            _timer = new Timer();
             _workTime = 25;
             _shortBreakTime = 5;
             _longBreakTime = 15;
-            _timer.Interval = 60000 * _workTime;
+            initializeTimer();
         }
 
         //Custom pomodoro settings
@@ -76,25 +75,49 @@ namespace BasicPomodoro
             {
                 throw new ArgumentException("Long break time needs to be greater than short break time.");
             }
-
-            //okay we're good, make the timer
-
-            //Log for logging's sake!
-            Debug.Print("workTime is : " + _workTime);
-            Debug.Print("shortBreakTime is : " + _shortBreakTime);
-            Debug.Print("longBreakTime is : " + _longBreakTime);
+            initializeTimer();
         }
 
         public readonly Timer Timer() {
             return _timer;
         }
 
+        //Initialize the timer
+        private void initializeTimer()
+        {
+
+            //Log for logging's sake!
+            Debug.Print("workTime is : " + _workTime);
+            Debug.Print("shortBreakTime is : " + _shortBreakTime);
+            Debug.Print("longBreakTime is : " + _longBreakTime);
+
+            //okay we're good, make the timer
+            _timer = new Timer();
+
+            //use work time to start since this is state 0
+            _timer.Interval = 60000 * _workTime;
+            _timer.Elapsed += _timer_Elapsed;
+        }
+
         //start the timer
+        public void startTimer()
+        {
+
+            throw new NotImplementedException();
+        }
 
         //stop the timer
+        public void stopTimer()
+        {
+
+            throw new NotImplementedException();
+        }
 
         //respond to event
-
+        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+ 	        throw new NotImplementedException();
+        }
         //change state?
 
         //buzz!
