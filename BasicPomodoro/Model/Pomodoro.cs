@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicPomodoro.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace BasicPomodoro
 
     class Pomodoro : IDisposable
     {
-        private Timer _timer;
+        private TimerPlus _timer;
         private pomodoroState _state;
         private pomodoroState _nextState;
         private int _workTime; //minutes
@@ -82,7 +83,7 @@ namespace BasicPomodoro
             resetTimer();
         }
 
-        public readonly Timer Timer() {
+        public TimerPlus Timer() {
             return _timer;
         }
 
@@ -96,7 +97,7 @@ namespace BasicPomodoro
             Debug.Print("longBreakTime is : " + _longBreakTime);
 
             //okay we're good, make the timer
-            _timer = new Timer();
+            _timer = new TimerPlus();
 
             //use work time to start since this is state 0
             _timer.Interval = 60000 * _workTime;
@@ -110,7 +111,7 @@ namespace BasicPomodoro
         //start the timer
         public void startTimer()
         {
-
+            _timer.Start();
             throw new NotImplementedException();
         }
 
