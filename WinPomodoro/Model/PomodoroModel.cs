@@ -17,17 +17,8 @@ namespace WinPomodoro.Model
         /// <summary>
         /// The underlying timer
         /// </summary>
-        readonly DispatcherTimer timer = new DispatcherTimer();
+        readonly DispatcherTimer _timer = new DispatcherTimer();
 
-        /// <summary>
-        /// The current Pomodoro State
-        /// </summary>
-        private PomodoroState _state;
-
-        /// <summary>
-        /// The next Pomodoro State
-        /// </summary>
-        private PomodoroState _nextState;
 
         private TimeSpan _workTime; 
         private TimeSpan _shortBreakTime;
@@ -96,19 +87,17 @@ namespace WinPomodoro.Model
         {
 
             //Log for logging's sake!
-            Debug.Print("workTime is : " + _workTime);
-            Debug.Print("shortBreakTime is : " + _shortBreakTime);
-            Debug.Print("longBreakTime is : " + _longBreakTime);
+            Debug.Print("workTime is : " + _workTime.ToString());
+            Debug.Print("shortBreakTime is : " + _shortBreakTime.ToString());
+            Debug.Print("longBreakTime is : " + _longBreakTime.ToString());
 
-            //okay we're good, make the timer
-            _timer = new TimerPlus();
+            //Make it small but not overly small
+            _timer.Interval = TimeSpan.FromSeconds(0.1);
+            _timer.Tick += (sender, e) => OnDispatcherTimerTick();
 
-            //use work time to start since this is state 0
-            _timer.Interval = 60000 * _workTime;
             _timer.Elapsed += _timer_Elapsed;
 
-            _state = PomodoroState.Idle;
-            _nextState = PomodoroState.Work;
+            Status = PomodoroState.Idle;
             _shortBreakCount = 0;
         }
 
@@ -133,12 +122,34 @@ namespace WinPomodoro.Model
         //change state?
 
         //buzz!
+        #region Properties
+        
+        public PomodoroState Status { get; set; }
+        
+        #endregion
 
-        //Cleanup
-        public void Dispose()
+        #region Events
+
+        public event EventHandler<TimerModelEventArgs> Tick;
+        public event EventHandler<TimerModelEventArgs> Started;
+        public event EventHandler<TimerModelEventArgs> Stopped;
+        public event EventHandler<TimerModelEventArgs> TimerReset;
+        public event EventHandler<TimerModelEventArgs> Completed;
+
+        #region OnTick
+        /// <summary>
+        /// Triggers the Tick event.
+        /// </summary>
+        private void OnTick()
         {
-            _timer.Dispose();
-        }
+            Status = TimerState.Running;
 
+            if (Tick != null)
+            {
+                Tick(this, new PomodoroModelEventArgs(Duration, Remaining, TimerModelEventArgs.Status.Running));
+            }
+        }
+        #endregion
+        #endregion
     }
 }
