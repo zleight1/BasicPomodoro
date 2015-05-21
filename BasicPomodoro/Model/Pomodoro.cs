@@ -14,7 +14,7 @@ namespace BasicPomodoro
         shortBreak = 3,
         longBreak = 4
     }
-    class Pomodoro
+    class Pomodoro : IDisposable
     {
         private Timer _timer;
         private pomodoroState _state;
@@ -46,6 +46,10 @@ namespace BasicPomodoro
             //okay we're good, make the timer
         }
 
+        public readonly Timer Timer() {
+            return _timer;
+        }
+
         //start the timer
 
         //stop the timer
@@ -55,6 +59,12 @@ namespace BasicPomodoro
         //change state?
 
         //buzz!
-        
+
+        //Cleanup
+        public void Dispose()
+        {
+            _timer.Dispose();
+        }
+
     }
 }
