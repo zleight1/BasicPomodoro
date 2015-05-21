@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,12 +39,50 @@ namespace BasicPomodoro
         {
             //some basic checks
             //are all arguments > 0
+            if (workTime > 0)
+            {
+                _workTime = workTime;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("workTime must be greater than 0.");
+            }
 
+            if (shortBreakTime > 0)
+            {
+                _shortBreakTime = shortBreakTime;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("shortBreakTime must be greater than 0.");
+            }
+
+            if (longBreakTime > 0)
+            {
+                _longBreakTime = longBreakTime;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("longBreakTime must be greater than 0.");
+            }
             //is break time >  worktime
+            if (longBreakTime > workTime || shortBreakTime > workTime)
+            {
+                throw new ArgumentException("Break time(s) cannot be longer than work time.");
+            }
 
             //is long break time > short break time
+            if (longBreakTime < shortBreakTime)
+            {
+                throw new ArgumentException("Long break time needs to be greater than short break time.");
+            }
 
             //okay we're good, make the timer
+
+            //Log for logging's sake!
+            Debug.Print("workTime is : " + _workTime);
+            Debug.Print("shortBreakTime is : " + _shortBreakTime);
+            Debug.Print("longBreakTime is : " + _longBreakTime);
         }
 
         public readonly Timer Timer() {
