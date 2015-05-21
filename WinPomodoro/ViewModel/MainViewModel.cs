@@ -62,7 +62,7 @@ namespace WinPomodoro.ViewModel
                 });
 
             PomodoroModel pom = new PomodoroModel();
-            pom.startTimer();
+            pom.Start();
         }
 
         ////public override void Cleanup()

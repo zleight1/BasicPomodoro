@@ -96,19 +96,19 @@ namespace WinPomodoro.Model
             _timer.Interval = 60000 * _workTime;
             _timer.Elapsed += _timer_Elapsed;
 
-            _state = PomodoroState.IDLE;
-            _nextState = PomodoroState.WORK;
+            _state = PomodoroState.Idle;
+            _nextState = PomodoroState.Work;
             _shortBreakCount = 0;
         }
 
         //start the timer
-        public void startTimer()
+        public void Start()
         {
             _timer.Start();
         }
 
         //stop the timer
-        public void stopTimer()
+        public void Stop()
         {
             _timer.Stop();
 

@@ -75,7 +75,9 @@
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
+    <Compile Include="Model\IPomodoModel.cs" />
     <Compile Include="Model\PomodoroModel.cs" />
+    <Compile Include="Model\PomodoroModelEventArgs.cs" />
     <Compile Include="Model\PomodoroState.cs" />
     <Compile Include="Model\TimerPlus.cs">
       <SubType>Component</SubType>
@@ -124,7 +126,9 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
