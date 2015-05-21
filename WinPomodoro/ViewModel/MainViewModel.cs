@@ -61,7 +61,7 @@ namespace WinPomodoro.ViewModel
                     WelcomeTitle = item.Title;
                 });
 
-            Pomodoro pom = new Pomodoro();
+            PomodoroModel pom = new PomodoroModel();
             pom.startTimer();
         }
 

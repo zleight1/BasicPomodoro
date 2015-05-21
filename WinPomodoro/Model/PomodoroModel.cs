@@ -20,7 +20,7 @@ namespace WinPomodoro.Model
         COMPLETED = 5
     }
 
-    class Pomodoro : IDisposable
+    class PomodoroModel : IDisposable
     {
         private TimerPlus _timer;
         private POMODORO_STATE _state;
@@ -32,7 +32,7 @@ namespace WinPomodoro.Model
         private int _shortBreakCount;
 
         //The default pomodoro settings
-        public Pomodoro()
+        public PomodoroModel()
         {
             _workTime = 25;
             _shortBreakTime = 5;
@@ -41,7 +41,7 @@ namespace WinPomodoro.Model
         }
 
         //Custom pomodoro settings
-        public Pomodoro(int workTime, int shortBreakTime, int longBreakTime)
+        public PomodoroModel(int workTime, int shortBreakTime, int longBreakTime)
         {
             //some basic checks
             //are all arguments > 0

@@ -74,7 +74,7 @@
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
-    <Compile Include="Model\Pomodoro.cs" />
+    <Compile Include="Model\PomodoroModel.cs" />
     <Compile Include="Model\TimerPlus.cs">
       <SubType>Component</SubType>
     </Compile>
