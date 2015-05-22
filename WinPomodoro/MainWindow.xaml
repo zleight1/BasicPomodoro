@@ -4,7 +4,7 @@
         xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:WinPomodoro.Views"
+        xmlns:views="clr-namespace:WinPomodoro.View"
         xmlns:vm="clr-namespace:WinPomodoro.ViewModel"
         x:Name="Root"
         d:DesignHeight="350"

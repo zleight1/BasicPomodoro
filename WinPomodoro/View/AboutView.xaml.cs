@@ -1,11 +1,12 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace WinPomodoro.View
 {
     /// <summary>
     /// Description for AboutView.
     /// </summary>
-    public partial class AboutView : Window
+    public partial class AboutView : UserControl
     {
         /// <summary>
         /// Initializes a new instance of the AboutView class.
