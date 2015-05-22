@@ -3,6 +3,8 @@ A Metro Style "Pomodoro Timer" Desktop Widget
 
 Based on: https://github.com/barrylapthorn/countdown_timer
 
+![example](https://github.com/zleight1/basicpomodoro/raw/master/example.png)
+
 More features to come.
 
 ## Features In Progress
