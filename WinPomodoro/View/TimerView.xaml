@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="WinPomodoro.View.TimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+
+    <Grid Margin="5">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="194*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="164*" />
+        </Grid.RowDefinitions>
+        <Label Name="TimerLabel"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalContentAlignment="Center"
+               Background="{Binding StatusBrush}"
+               Content="{Binding TimerValue}"
+               FontFamily="{Binding FontFamily}"
+               FontSize="{Binding FontSize}" />
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding StopTimer}"
+                Content="{StaticResource IconPause}" />
+        <Button Grid.Row="1"
+                Command="{Binding StartTimer}"
+                Content="{StaticResource IconPlay}" />
+
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding ResetTimer}"
+                Content="{StaticResource IconRewind}" />
+
+        <Button Grid.Row="3"
+                Command="{Binding Settings}"
+                Content="{StaticResource IconSettings}" />
+
+        <TextBlock Grid.Row="4"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="9">
+            <TextBlock.Text>
+                <Binding Path="CompletedCount">
+                    <Binding.StringFormat>Completed: {0}</Binding.StringFormat>
+                </Binding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <Button Grid.Row="4"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Right"
+                Command="{Binding About}"
+                Content="?"
+                Style="{StaticResource LinkButton}" />
+    </Grid>
+</UserControl>
