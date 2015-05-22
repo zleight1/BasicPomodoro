@@ -14,6 +14,11 @@
                 <ResourceDictionary Source="Resources/icon.play.xaml" />
                 <ResourceDictionary Source="Resources/icon.settings.xaml" />
                 <ResourceDictionary Source="Resources/icon.rewind.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <!--  This locates our view models for us  -->
@@ -26,10 +31,6 @@
 
             <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
                 <views:SettingsView />
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type vm:AboutViewModel}">
-                <views:AboutView />
             </DataTemplate>
 
             <!--  An HTML link style button  -->

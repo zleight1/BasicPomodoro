@@ -13,7 +13,6 @@ namespace WinPomodoro.ViewModel
         private static MainViewModel _main;
         private static TimerViewModel _timer;
         private static SettingsViewModel _settings;
-        private static AboutViewModel _about;
 
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
@@ -71,18 +70,6 @@ namespace WinPomodoro.ViewModel
                 }
 
                 return _timer;
-            }
-        }
-
-        public AboutViewModel About
-        {
-            get
-            {
-                if (_about == null)
-                {
-                    _about = new AboutViewModel();
-                }
-                return _about;
             }
         }
     }

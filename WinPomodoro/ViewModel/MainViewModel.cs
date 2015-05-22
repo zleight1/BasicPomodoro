@@ -128,9 +128,6 @@ namespace WinPomodoro.ViewModel
                 case SimpleMessage.MessageType.SwitchToSettingsView:
                     ExecuteViewSettingsCommand();
                     break;
-                case SimpleMessage.MessageType.SwitchToAboutView:
-                    ExecuteViewAboutCommand();
-                    break;
                 case SimpleMessage.MessageType.SettingsChanged:
                     UpdatePropertiesFromSettings();
                     break;
@@ -152,11 +149,6 @@ namespace WinPomodoro.ViewModel
         private void ExecuteViewSettingsCommand()
         {
             CurrentViewModel = _locator.Settings;
-        }
-
-        private void ExecuteViewAboutCommand()
-        {
-            CurrentViewModel = _locator.About;
         }
 
         private static void ExecutePlayCommand()
