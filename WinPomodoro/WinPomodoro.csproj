@@ -147,11 +147,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Btl\Controls\WinPomodoro.Controls.csproj">
+    <ProjectReference Include="Controls\WinPomodoro.Controls.csproj">
       <Project>{eefa1336-44f6-4766-be16-a81ad1fcc2e5}</Project>
       <Name>WinPomodoro.Controls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Btl\MicroMvvm\WinPomodoro.MicroMvvm.csproj">
+    <ProjectReference Include="MicroMvvm\WinPomodoro.MicroMvvm.csproj">
       <Project>{9efe6cbd-df21-436e-9f81-e258bab0b653}</Project>
       <Name>WinPomodoro.MicroMvvm</Name>
     </ProjectReference>
