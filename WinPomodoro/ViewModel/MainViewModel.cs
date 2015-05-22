@@ -30,7 +30,7 @@ namespace WinPomodoro.ViewModel
         /// The original window title since we swap it out with the countdown
         /// value.
         /// </summary>
-        private readonly string _originalWindowTitle = "Countdown Timer";
+        private readonly string _originalWindowTitle = "Pomodoro";
 
         #region Backing stores
         // The backing store for the various INPC properties on this view-model

@@ -10,10 +10,13 @@
         x:Name="Root"
         d:DesignHeight="350"
         d:DesignWidth="525"
+                      Width="525" Height="350"
         DataContext="{Binding Main,
                               Source={StaticResource Locator}}"
         ResizeMode="CanMinimize"
         SizeToContent="WidthAndHeight"
+                      
+                      EnableDWMDropShadow="True"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
     <Window.Title>

@@ -1,5 +1,5 @@
 # BasicPomodoro
-A bare-bones "Pomodoro Timer" Desktop Widget
+A Metro Style "Pomodoro Timer" Desktop Widget
 
 Based on: https://github.com/barrylapthorn/countdown_timer
 
